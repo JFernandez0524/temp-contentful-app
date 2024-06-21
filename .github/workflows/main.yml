@@ -36,10 +36,10 @@ jobs:
           node-version: 18
           cache: 'npm'
       - name: Install dependencies
-        run: npm install
-      - name: Build
         env:
           VITE_CONTENTFUL_ACCESS_TOKEN: ${{secrets.VITE_CONTENTFUL_ACCESS_TOKEN}}
+        run: npm install
+      - name: Build        
         run: VITE_CONTENTFUL_ACCESS_TOKEN=${{secrets.VITE_CONTENTFUL_ACCESS_TOKEN}} npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4
